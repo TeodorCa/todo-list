@@ -1,32 +1,23 @@
 var button = document.getElementById("enter");
-var deleteButton = document.getElementById("btn-del");
 var input = document.getElementById("userinput");
 var ul = document.querySelector("ul");
 
-function inputLength() {
-	return input.value.length;
-}
-
 function createListElement() {
-	var div = document.createElement("div")
-	div.className="wrapper"
+	var div = document.createElement("div");
 	var li = document.createElement("li");
 	var delButton = document.createElement("button");
-	delButton.id="btn-del";
+	div.classList.add("wrapper");
+	ul.appendChild(div);
+	div.append(li, delButton);
+	li.classList.add("taskClass");
+	li.appendChild(document.createTextNode(input.value));
+	input.value = "";
 	delButton.classList.add("delClass");
 	delButton.innerHTML='Del';
-	li.appendChild(document.createTextNode(input.value));
-	ul.appendChild(div);
-	div.appendChild(li);
-	div.appendChild(delButton);
-	input.value = "";
 }
 
-function deleteListElement(element) {
-	if (element.target.className === "delClass"){
-		console.log(element.target)
-		element.target.parentElement.remove();
-	}
+function inputLength() {
+	return input.value.length;
 }
 
 function addListAfterClick() {
@@ -47,7 +38,17 @@ function doneTask(task) {
 	}
 }
 
-ul.addEventListener("click", doneTask);
-ul.addEventListener("click", deleteListElement);
+function deleteListElement(element) {
+	if (element.target.className === "delClass"){
+		element.target.parentElement.remove();
+	}
+}
+
+function handleUlClick (element) {
+	doneTask(element);
+	deleteListElement(element);
+}
+
+ul.addEventListener("click", handleUlClick)
 button.addEventListener("click", addListAfterClick);
 input.addEventListener("keypress", addListAfterKeypress);

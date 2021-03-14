@@ -1,21 +1,37 @@
-.coolTitle {
-  text-align: center;
-  font-family: 'Oswald', Helvetica, sans-serif;
-  font-size: 40px;
-  transform: skewY(-10deg);
-  letter-spacing: 4px;
-  word-spacing: -8px;
-  color: tomato;
-  text-shadow: 
-    -1px -1px 0 firebrick,
-    -2px -2px 0 firebrick,
-    -3px -3px 0 firebrick,
-    -4px -4px 0 firebrick,
-    -5px -5px 0 firebrick,
-    -6px -6px 0 firebrick,
-    -7px -7px 0 firebrick,
-    -8px -8px 0 firebrick,
-    -30px 20px 40px dimgrey;
+body {
+  /* display: flex; */
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0rem 20rem 0rem 20rem;
+  background-color: aliceblue;
+  border: 1px solid green;
+  border-radius: 1rem;
+  box-sizing: border-box;
+  box-shadow: 0.1rem 0.1rem 0.4rem black;
+  position: relative;
+  /* width: 100vh;
+  height: 60vh; */
+}
+
+.userInput {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+input {
+  margin-right: 1rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: burlywood;
 }
 
 .done {
@@ -24,12 +40,6 @@
 
 ul {
   display: block;
-}
-
-#btn-del  {
-  display: flex;
-  /* justify-content: flex-start; */
-  color: red;
 }
 
 .delClass {
