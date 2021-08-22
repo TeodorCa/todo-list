@@ -1,0 +1,7 @@
+---
+deployment:
+ tasks:
+  - export DEPLOYPATH=/home/iteo/public_html/todo-list
+  - /bin/cp index.html $DEPLOYPATH
+  - /bin/cp style.css $DEPLOYPATH
+  - /bin/cp script.js $DEPLOYPATH
